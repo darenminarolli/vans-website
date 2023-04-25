@@ -1,0 +1,40 @@
+
+/* .bgimg{
+  position: absolute;
+width: 548.15px;
+height: 386.7px;
+left: 0px;
+top: 111.62px;
+background-image: url(${BgImage});
+background-color: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46));
+} */
+
+.bg-image {
+  gap: none;
+  background-size: contain; /* or contain, or a specific size */
+  background-position: center; /* or any other position */
+  background-repeat: no-repeat; /* or repeat-x, repeat-y, or repeat */
+  background-attachment: fixed; /* or scroll */
+}
+.text{
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 36px;
+line-height: 42px;
+color: aliceblue;
+}
+.sec-text{
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+color: aliceblue;
+}
+
+.btn{
+ background-color: orange !important;
+ border: none !important;
+ 
+}

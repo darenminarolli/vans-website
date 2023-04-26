@@ -29,7 +29,7 @@ const [filter, setFilter] = useState(null);
 
 const [color,setColor]=useState(null)
 
-function handleColor(){
+const colorChanger=()=>{
 if(vans.type=='luxury'){
   setColor('#161616')
 }else if(vans.type=='simple'){
@@ -71,7 +71,7 @@ if(vans.type=='luxury'){
                   
                   <Card.Text>${van.price}/day</Card.Text>
                   <Link to={`/vans/${van.id}`}>
-                    <Button variant="primary" style={{backgroundColor: `${handleColor} !important`}}>{van.type}</Button>
+                    <Button className={van.type==='luxury'? 'luxury':van.type==='simple'?'simple':'rugged'} >{van.type}</Button>
                   </Link>
                 </Card.Body>
               </Card>

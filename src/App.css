@@ -8,6 +8,9 @@ top: 111.62px;
 background-image: url(${BgImage});
 background-color: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46));
 } */
+body{
+  overflow-x: hidden;
+}
 
 .bg-image {
   gap: none;
@@ -38,3 +41,4 @@ color: aliceblue;
  border: none !important;
  
 }
+

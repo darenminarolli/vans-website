@@ -8,13 +8,13 @@ import About from './components/About'
 import Vans from './components/Vans'
 import Home from './components/Home'
 import Footer from './components/Footer'
+import './server'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
    <NavBar/>
-   <br />
    <Routes>
    <Route path='/' element={<Home/>}/>
     <Route path='/about' element={<About/>}/>

@@ -61,9 +61,9 @@ if(vans.type=='luxury'){
            
           </Col>
         </Row>
-        <Row xs={1} sm={2} md={3} lg={4}>
+        <Row className='' xs={1} sm={2} md={3} lg={4}>
         {filteredVans.map((van) => (
-            <Col key={van.id}>
+            <Col className='py-2' key={van.id}>
               <Card className="mb-4 h-100">
                 <Card.Img variant="top" src={van.imageUrl} />
                 <Card.Body>

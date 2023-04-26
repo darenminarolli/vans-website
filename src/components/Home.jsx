@@ -6,7 +6,9 @@ const Home = () => {
   return (
    
     <>  
-   <div className="bg-image pt-5" style={{backgroundImage: `url(${BgImage})`, height:'70vh'}}>
+
+
+<div className="bg-image bg-cover pt-5" style={{backgroundImage: `url(${BgImage})`, height:'70vh'}}>
   <div className="container py-5">
     <div className="row">
       <div className="col-lg-6">
@@ -18,6 +20,7 @@ const Home = () => {
     </div>
   </div>
 </div>
+
 
     </>
   )

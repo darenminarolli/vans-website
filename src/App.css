@@ -12,6 +12,7 @@ body{
   overflow-x: hidden;
 }
 
+
 .bg-image {
   gap: none;
   background-size: contain; /* or contain, or a specific size */
@@ -42,3 +43,16 @@ color: aliceblue;
  
 }
 
+#clearBtn{
+  border: none;
+  background-color: white !important;
+ 
+}
+#clearBtn:hover{
+ color: crimson;
+}
+
+.Typebuttons{
+  background-color: #FFEAD0 !important;
+  color: rgb(36, 36, 36) !important;
+}

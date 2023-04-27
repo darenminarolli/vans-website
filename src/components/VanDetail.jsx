@@ -28,9 +28,15 @@ const VanDetail = () => {
           <img src={van.imageUrl} className="img-fluid rounded" alt="About Us" />
         </div>
         <div className="col-md-6 d-flex flex-column justify-content-center">
-          <button id={(van.type==='luxury'? 'luxury':van.type==='simple'?'simple':'rugged')} className='btn btn-primary m-2'>{van.type}</button>
-          <h1 style={{fontWeight:'bolder'}}>{van.name}</h1>
-         <p>${van.price}/day</p>
+         
+         <div className='row  py-2  '>
+          <h1 style={{fontWeight:'bolder'}} className='col-6 gap-1'>{van.name}</h1>
+          <button id={(van.type==='luxury'? 'luxury':van.type==='simple'?'simple':'rugged')} className='btn btn-primary col-5'>{van.type}</button>
+         </div>
+         
+         
+         
+         <p><strong> ${van.price}/day</strong> </p>
           <p className='text-break'>{van.description}</p>
           <h2 className="mt-4 mb-3">Your Destination is Waiting. Your Van is Ready.</h2>
           <form>

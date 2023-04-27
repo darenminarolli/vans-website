@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 // import './App.css'
 const Footer = () => {
   return (
@@ -6,7 +7,7 @@ const Footer = () => {
  
     <footer className="footer mt-auto p-4 bg-dark h-5">
       <div className="container text-center">
-        <span className="text-muted">&copy 2022 #VANSLIFE</span>
+        <span className="text-muted">&copy 2022 <Link style={{textDecoration:'none', color:'grey'}} to='/'>#VANSLIFE </Link></span>
       </div>
     </footer>
     </>

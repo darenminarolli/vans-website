@@ -8,7 +8,7 @@ const Home = () => {
     <>  
 
 
-<div className="bg-image bg-cover pt-5" style={{backgroundImage: `url(${BgImage})`, height:'70vh'}}>
+<div className="bg-image bg-cover pt-5 container-fluid" style={{backgroundImage: `url(${BgImage})`, height:'70vh'}}>
   <div className="container py-5">
     <div className="row">
       <div className="col-lg-6">

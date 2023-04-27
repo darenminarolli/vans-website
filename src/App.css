@@ -56,13 +56,15 @@ color: aliceblue;
   background-color: #FFEAD0 !important;
   color: rgb(36, 36, 36) !important;
 }
-.luxury{
+#luxury{
   background-color:#161616 !important;
 }
 
-.simple{
+#simple{
   background-color: #E17654 !important;
+ 
 }
-.rugged{
+#rugged{
   background-color: #115E59 !important;
+  
 }

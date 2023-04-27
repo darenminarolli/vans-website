@@ -64,17 +64,17 @@ if(vans.type=='luxury'){
         <Row className='' xs={1} sm={2} md={3} lg={4}>
         {filteredVans.map((van) => (
             <Col className='py-2' key={van.id}>
-              <Card className="mb-4 h-100">
+                  <Link to={`/vans/${van.id}`} style={{textDecoration:'none', color : ' rgb(21, 21, 21)'}}>
+              <Card className="mb-4 h-100 ">
                 <Card.Img variant="top" src={van.imageUrl} />
                 <Card.Body>
                   <Card.Title>{van.name}</Card.Title>
                   
                   <Card.Text>${van.price}/day</Card.Text>
-                  <Link to={`/vans/${van.id}`}>
-                    <Button className={van.type==='luxury'? 'luxury':van.type==='simple'?'simple':'rugged'} >{van.type}</Button>
-                  </Link>
+                    <Button id={van.type==='luxury'? 'luxury':van.type==='simple'?'simple':'rugged'} >{van.type}</Button>
                 </Card.Body>
               </Card>
+                  </Link>
             </Col>
           ))}
         </Row>

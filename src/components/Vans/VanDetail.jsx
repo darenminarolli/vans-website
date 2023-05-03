@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams,Link } from 'react-router-dom'
 import { useEffect,useState } from 'react'
 import { Card, Button, Container, Row, Col, CardImg } from 'react-bootstrap';
-import '../App.css'
+import '../../App.css'
 const VanDetail = () => {
     const params = useParams()
     const [van, setVan] = React.useState(null)
@@ -30,8 +30,8 @@ const VanDetail = () => {
         <div className="col-md-6 d-flex flex-column justify-content-center">
          
          <div className='row  py-2  '>
-          <h1 style={{fontWeight:'bolder'}} className='col-6 gap-1'>{van.name}</h1>
-          <button id={(van.type==='luxury'? 'luxury':van.type==='simple'?'simple':'rugged')} className='btn btn-primary col-5'>{van.type}</button>
+          <h1 style={{fontWeight:'bolder'}} className='col-6 gap-1 '>{van.name}</h1>
+          <button type='button' id={(van.type==='luxury'? 'luxury':van.type==='simple'?'simple':'rugged')} className='btn btn-secondary   col-5'>{van.type}</button>
          </div>
          
          

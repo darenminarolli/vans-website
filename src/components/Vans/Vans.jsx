@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
-import '../server';
-import '../App.css'
+import '../../server';
+import '../../App.css'
 
 
-const Vans=(()=>{
+const Vans=(() => {
 
   const [vans, setVans] = useState([]);
  
 
 //   useEffect(() => {
 
-useEffect(()=>{
+ useEffect(()=>{
   fetch("/api/vans")
        .then(res=>res.json())
        .then(data=> setVans(data.vans))

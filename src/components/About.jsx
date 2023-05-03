@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const About = () => {
   return (
    <>
-   <div className="container py-5">
+   <div style={{height:'100vh'}} className="container py-5">
       <div className="row">
         <div className="col-md-6">
           <img src={coverImage1} className="img-fluid rounded" alt="About Us" />
@@ -20,7 +20,7 @@ Our team is full of vanlife enthusiasts who know firsthand the magic of touring 
           <form>
             
             {/* <button type="button" className="btn btn-primary">Explore vans</button> */}
-           <Link to='/vans' className='btn btn-primary '>Explore vans</Link>
+          <Link to='/vans' className='btn btn-primary '>Explore vans</Link>
           </form>
         </div>
       </div>

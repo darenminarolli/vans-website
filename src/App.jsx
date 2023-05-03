@@ -1,26 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
-import NavBar from './components/NavBar'
+
 import About from './components/About'
-import Vans from './components/Vans'
+import Vans from './components/Vans/Vans'
 import Home from './components/Home'
 import Footer from './components/Footer'
 import './server'
-import VanDetail from './components/VanDetail'
+import VanDetail from './components/Vans/VanDetail'
+import NotFound from './components/NotFound'
+import Layout from './navigation/Layout'
+import Income from './components/Host/Income'
+import Reviews from './components/Host/Reviews'
+import Dashboard from './components/Host/Dashboard'
+import HostLayout from './components/Host/HostLayout'
 function App() {
-  const [count, setCount] = useState(0)
+ 
 
   return (
     <>
-   <NavBar/>
+
    <Routes>
-   <Route path='/' element={<Home/>}/>
-    <Route path='/about' element={<About/>}/>
+    <Route path='/' element={<Layout/>}>
+      <Route index element={<Home/>}/>
+      <Route path='/about' element={<About/>}/>
       <Route path='/vans' element={<Vans/>}/>
       <Route path='/vans/:id' element={<VanDetail/>}/>
+
+      <Route path='host' element={<HostLayout/>}>
+        <Route index element={<Dashboard/>} />
+        <Route path='income' element={<Income/>}/>
+        <Route path='review' element={<Reviews/>}/>
+    </Route>
+    </Route>
+      
+      <Route path='*' element={<NotFound/>}/>
    </Routes>
      <Footer/>
     </>

@@ -8,6 +8,9 @@ function Navbar() {
         
         <div className="justify-content-end" id="navbarNav">
           <ul className="navbar-nav">
+            <li className='nav-item'>
+              <Link className='nav-link' to='/host'>Host</Link>
+            </li>
             <li className="nav-item">
               <Link className="nav-link" to="/about">About Us</Link>
             </li>

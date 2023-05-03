@@ -8,10 +8,10 @@ const Home = () => {
     <>  
 
 
-<div className="bg-image bg-cover pt-5 container-fluid" style={{backgroundImage: `url(${BgImage})`, height:'70vh'}}>
+<div className="bg-image bg-cover pt-5 container-fluid home-container " style={{backgroundImage: `url(${BgImage})`, height:'80vh'}}>
   <div className="container py-5">
-    <div className="row">
-      <div className="col-lg-6">
+    <div className="row ">
+      <div className="col-lg-6 col-sm-4">
         <h1 className="text-white">You got the travel plans,<br /> we got the travel vans.</h1>
         <p className="lead text-white">Add adventure to your life by joining the #vanlife movement. <br />
           Rent the perfect van to make your perfect road trip.</p>

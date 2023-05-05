@@ -14,3 +14,10 @@ background-color:  #d3b0967a;
     text-decoration: underline;
     font-weight: bolder;
 }
+
+.active-link{
+    font-weight: bold;
+    text-decoration: underline;
+    color: #161616;
+    text-decoration: underline;
+}

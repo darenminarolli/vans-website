@@ -1,21 +1,28 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink} from 'react-router-dom';
 import './Navbar.css'
 function Navbar() {
+
+  const activeStyles = {
+    fontWeight: "bold",
+    textDecoration: "underline",
+    color: "#161616"
+}
   return (
     <nav className="navbar navbar-expand-lg navbar-light " >
       <div className="container">
-        <Link className="navbar-brand" to="/">#VANSLIFE</Link>
+        <NavLink className="navbar-brand" to="/">#VANSLIFE</NavLink>
         
         <div className="justify-content-end" id="navbarNav">
           <ul className="navbar-nav">
             <li className='nav-item'>
-              <Link className='nav-link' to='/host'>Host</Link>
+            <NavLink className='nav-link' to='/host'>Host</NavLink>
+
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about">About Us</Link>
+              <NavLink className="nav-link" to="/about">About Us</NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/vans">Vans</Link>
+              <NavLink className="nav-link" to="/vans">Vans</NavLink>
             </li>
           </ul>
         </div>

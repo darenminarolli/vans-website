@@ -15,7 +15,7 @@ const HostLayout = () => {
         <Link className='nav-link links' to='/host/income'>Income</Link>
     </li>
     <li className='nav-item'>
-        <Link to='/host/hostvans' className='nav-link links'>Vans </Link>
+        <Link to='/host/vans' className='nav-link links'>Vans </Link>
     </li>
     <li className='nav-item'>
         <Link  className='nav-link links' to='/host/review'>Reviews</Link>

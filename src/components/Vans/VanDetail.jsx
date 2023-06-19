@@ -1,7 +1,6 @@
 import React from 'react'
 import { useParams,Link } from 'react-router-dom'
-import { useEffect,useState } from 'react'
-import { Card, Button, Container, Row, Col, CardImg } from 'react-bootstrap';
+import { useEffect,useState } from 'react';
 import '../../App.css'
 const VanDetail = () => {
     const params = useParams()
@@ -14,20 +13,17 @@ const VanDetail = () => {
     }, [params.id])
   
    
-   
+   console.log(van)
   return (
-    <>
-
-   
+    <>   
        { van ? ( 
 
-
-<div className="container py-5">
-      <div className="row">
-        <div className="col-md-6">
-          <img src={van.imageUrl} className="img-fluid rounded" alt="About Us" />
-        </div>
-        <div className="col-md-6 d-flex flex-column justify-content-center">
+      <div className="container py-5">
+          <div className="row">
+            <div className="col-md-6">
+              <img src={van.imageUrl} className="img-fluid rounded" alt="About Us" />
+            </div>
+          <div className="col-md-6 d-flex flex-column justify-content-center">
          
          <div className='row  py-2  '>
           <h1 style={{fontWeight:'bolder'}} className='col-6 gap-1 '>{van.name}</h1>
@@ -35,13 +31,11 @@ const VanDetail = () => {
          </div>
          
          
-         
          <p><strong> ${van.price}/day</strong> </p>
           <p className='text-break'>{van.description}</p>
           <h2 className="mt-4 mb-3">Your Destination is Waiting. Your Van is Ready.</h2>
           <form>
             
-            {/* <button type="button" className="btn btn-primary">Explore vans</button> */}
            <Link to='/vans' className='btn btn-primary '>Explore vans</Link>
           </form>
         </div>

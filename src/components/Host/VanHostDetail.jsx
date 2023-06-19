@@ -18,7 +18,7 @@ const styles={
   return (
     <>
     <section>
-     <Link to='..' relative='path' className='nav-link'><h5><AiOutlineArrowLeft/> Back to all vans</h5></Link> 
+     <Link to='/host/vans' relative='path' className='nav-link'><h5><AiOutlineArrowLeft/> Back to all vans</h5></Link> 
     </section>
     {
       currentVan ? (

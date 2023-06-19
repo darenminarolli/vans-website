@@ -93,3 +93,27 @@ color: aliceblue;
 
   } */
 }
+
+.navbar{
+ 
+  width: 100vw;
+  height: 111.62px;
+  
+  background-color:  #d3b0967a;
+   
+  }
+  
+  .links{
+      color: black !important;
+  }
+  .links:hover{
+      text-decoration: underline;
+      font-weight: bolder;
+  }
+  
+  .active-link{
+      font-weight: bold;
+      text-decoration: underline;
+      color: #161616;
+      text-decoration: underline;
+  }

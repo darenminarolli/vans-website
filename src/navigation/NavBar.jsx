@@ -1,5 +1,5 @@
 import { Link, NavLink} from 'react-router-dom';
-import '../navigation/Navbar.css'
+import '../../src/App.css'
 function Navbar() {
 
   const activeStyles = {

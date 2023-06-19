@@ -1,7 +1,7 @@
 
 import { Outlet } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import '../../navigation/NavBar.css'
+import '../../App.css'
 const HostLayout = () => {
 
   return (

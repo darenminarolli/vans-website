@@ -1,9 +1,11 @@
 import React from 'react'
-import { useParams,Link } from 'react-router-dom'
+import { useParams,Link,useLocation } from 'react-router-dom'
 import { useEffect,useState } from 'react';
 import '../../App.css'
 const VanDetail = () => {
     const params = useParams()
+    const location=useLocation()
+    console.log(location)
     const [van, setVan] = React.useState(null)
 
     React.useEffect(() => {
@@ -13,12 +15,22 @@ const VanDetail = () => {
     }, [params.id])
   
    
-   console.log(van)
-  return (
+  //  console.log(van)
+const search=location.state?.search || ''; //optional chaining
+// nese location.state eshte dicka atehere kerko per search nese jo thjesht '', ne menyren e vjeter:
+// location.state && location.state.search pra nuk mund te ezikstoj location.state.search nese location.state=false
+const type=location.state?.type || 'all';
+console.log( typeof type);  
+return (
     <>   
        { van ? ( 
 
       <div className="container py-5">
+        <div className='row'>
+          <Link to={`/vans${search}`} relative='path' className='nav-link links'>
+          <u><strong>Back to {type} vans</strong></u>
+          </Link>
+        </div>
           <div className="row">
             <div className="col-md-6">
               <img src={van.imageUrl} className="img-fluid rounded" alt="About Us" />

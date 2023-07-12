@@ -3,20 +3,21 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import '../../server';
 import '../../App.css'
-
+import { getVans } from '../../api';
 
 const Vans=(() => {
 
   const [vans, setVans] = useState([]);
- const[searchParams,setSearchParams]=useSearchParams();
+const[searchParams,setSearchParams]=useSearchParams();
 const  typeFilter=searchParams.get('type')
-console.log(typeFilter)
-//   useEffect(() => {
+// console.log(typeFilter)
 
  useEffect(()=>{
-  fetch("/api/vans")
-       .then(res=>res.json())
-       .then(data=> setVans(data.vans))
+  async function loadVans(){
+    const data= await getVans();
+    setVans(data)
+  }
+  loadVans()
 },[])
 
 
@@ -34,7 +35,16 @@ if(vans.type=='luxury'){
   setColor('#115E59')
 }
 }
-
+function handleFilterChange(key, value) {
+  setSearchParams(prevParams => {
+      if (value === null) {
+          prevParams.delete(key)
+      } else {
+          prevParams.set(key, value)
+      }
+      return prevParams
+  })
+}
 
   return(
     <>
@@ -43,17 +53,17 @@ if(vans.type=='luxury'){
         <h1 className="mb-4">Explore our van options</h1>
         <Row className="mb-4">
           <Col>
-              <Button onClick={()=>setSearchParams({type:'simple'})} variant="outline-primary" className="me-3 Typebuttons">Simple</Button>
-              <Button onClick={()=>setSearchParams({type:'rugged'})} variant="outline-primary" className="me-3 Typebuttons">Rugged</Button>
-             <Button onClick={()=>setSearchParams({type:'luxury'})} variant="outline-primary" className="me-3 Typebuttons">Luxury</Button>
-               <Button onClick={()=>setSearchParams({type:''})} id='clearBtn'  variant="outline-secondary"> <u>Clear filters</u></Button>
+              <Button onClick={() => handleFilterChange("type", "simple")} variant="outline-primary" className="me-3 Typebuttons">Simple</Button>
+              <Button onClick={() => handleFilterChange("type", "rugged")} variant="outline-primary" className="me-3 Typebuttons">Rugged</Button>
+             <Button onClick={() => handleFilterChange("type", "luxury")} variant="outline-primary" className="me-3 Typebuttons">Luxury</Button>
+               <Button onClick={() => handleFilterChange("type",null)} id='clearBtn'  variant="outline-secondary"> <u>Clear filters</u></Button>
            
           </Col>
         </Row>
         <Row className='' xs={1} sm={2} md={3} lg={4}>
         {displayFilteredVans.map((van) => (
             <Col className='py-2' key={van.id}>
-                  <Link to={`/vans/${van.id}`} style={{textDecoration:'none', color : ' rgb(21, 21, 21)'}}>
+                  <Link to={van.id} state={{search:`?${searchParams.toString()}`, type: typeFilter}} style={{textDecoration:'none', color : ' rgb(21, 21, 21)'}}>
               <Card className="mb-4 h-100 ">
                 <Card.Img variant="top" src={van.imageUrl} />
                 <Card.Body>

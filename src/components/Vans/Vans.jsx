@@ -60,11 +60,11 @@ function handleFilterChange(key, value) {
            
           </Col>
         </Row>
-        <Row className='' xs={1} sm={2} md={3} lg={4}>
+        <Row className='' xs={1} sm={2} md={3} lg={4} >
         {displayFilteredVans.map((van) => (
-            <Col className='py-2' key={van.id}>
+            <Col className='py-2' key={van.id} >
                   <Link to={van.id} state={{search:`?${searchParams.toString()}`, type: typeFilter}} style={{textDecoration:'none', color : ' rgb(21, 21, 21)'}}>
-              <Card className="mb-4 h-100 ">
+              <Card className="mb-4 h-100">
                 <Card.Img variant="top" src={van.imageUrl} />
                 <Card.Body>
                   <Card.Title>{van.name}</Card.Title>

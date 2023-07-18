@@ -29,7 +29,7 @@ function App() {
       <Route path='about' element={<About/>}/>
       <Route path='vans' element={<Vans/>}/>
       <Route path='vans/:id' element={<VanDetail/>}/>
-      
+
       <Route path='host' element={<HostLayout/>}>
         <Route index element={<Dashboard/>} />
         <Route path='income' element={<Income/>}/>
@@ -39,12 +39,11 @@ function App() {
           <Route index element={<VanHostDetailDetails/>}/> 
           <Route path='pricing' element={<VanHostDetailPricing/>}/>
           <Route path='photos' element={<VanHostDeailPhotos/>}/>
-          
        </Route>
     </Route>
     </Route>
       <Route path='*' element={<NotFound/>}/>
-   </Routes>
+   </Routes><br/>
      <Footer/>
     </>
   )

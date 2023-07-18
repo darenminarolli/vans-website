@@ -33,11 +33,11 @@ return (
         </div>
           <div className="row">
             <div className="col-md-6">
-              <img src={van.imageUrl} className="img-fluid rounded" alt="About Us" />
+              <img src={van.imageUrl} className="img-fluid rounded" alt="About Us"/>
             </div>
           <div className="col-md-6 d-flex flex-column justify-content-center">
          
-         <div className='row  py-2  '>
+         <div className='row py-2'>
           <h1 style={{fontWeight:'bolder'}} className='col-6 gap-1 '>{van.name}</h1>
           <button type='button' id={(van.type==='luxury'? 'luxury':van.type==='simple'?'simple':'rugged')} className='btn btn-secondary   col-5'>{van.type}</button>
          </div>

@@ -21,7 +21,6 @@ const HostLayout = () => {
         <Link  className='nav-link links' to='/host/review'>Reviews</Link>
     </li>
 </ul>
-   
     <Outlet/>
     </>
   )

@@ -1,25 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, useLoaderData} from 'react-router-dom';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import '../../server';
 import '../../App.css'
 import { getVans } from '../../api';
 
-const Vans=(() => {
+export async function loader(){
+  return  await getVans()
+}
+export default function  Vans(){
 
-  const [vans, setVans] = useState([]);
 const[searchParams,setSearchParams]=useSearchParams();
 const  typeFilter=searchParams.get('type')
-// console.log(typeFilter)
-
- useEffect(()=>{
-  async function loadVans(){
-    const data= await getVans();
-    setVans(data)
-  }
-  loadVans()
-},[])
-
+const vans=useLoaderData()
+console.log(vans);
 
 
 const displayFilteredVans= typeFilter? vans.filter((van)=>van.type==typeFilter): vans;
@@ -81,7 +75,6 @@ function handleFilterChange(key, value) {
     </div>
     </>
   )
-})
+}
 
-  export default Vans
-
+ 

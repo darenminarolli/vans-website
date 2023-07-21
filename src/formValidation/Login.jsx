@@ -17,7 +17,7 @@ const Login = () => {
   return (
     <>
       <section className='container-fluid d-flex flex-column align-items-center justify-content-center mt-3' style={{ width:'40vw'}}>
-        <h1>Sign in to your account</h1>
+        <h1 style={{fontSize:'1.5rem'}}>Sign in to your account</h1>
         <form onSubmit={handleSubmit} style={{width:'30vw'}}>
             <label htmlFor="email">E-mail:</label><br/>
             <input type="email" onChange={handleChange} name='email' id='email' className='form-control' style={{width:'30vw'}} placeholder='Enter your email...'/><br />

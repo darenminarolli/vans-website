@@ -21,6 +21,7 @@ import HostVans from './pages/Host/HostVans'
 import VanHostDeailPhotos from './pages/Host/VanHostDeailPhotos'
 import VanHostDetailPricing from './pages/Host/VanHostDetailPricing'
 import VanHostDetailDetails from './pages/Host/VanHostDetailDetails'
+import Login from './formValidation/Login'
 
 
 const router = createBrowserRouter(createRoutesFromElements(
@@ -30,18 +31,18 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path='about' element={<About/>}/>
     <Route path='vans' element={<Vans/>} loader={VansLoader}/>
     <Route path='vans/:id' element={<VanDetail/>}/>
-
+    <Route path='login' element={<Login/>}/>
     <Route path='host' element={<HostLayout/>}>
       <Route index element={<Dashboard/>} />
       <Route path='income' element={<Income/>}/>
       <Route path='review' element={<Reviews/>}/>
       <Route path='vans' element={<HostVans/>}/>
       <Route path='vans/:id/' element={<VanHostDetail/>}>
-        <Route index element={<VanHostDetailDetails/>}/> 
-        <Route path='pricing' element={<VanHostDetailPricing/>}/>
-        <Route path='photos' element={<VanHostDeailPhotos/>}/>
+          <Route index element={<VanHostDetailDetails/>}/> 
+          <Route path='pricing' element={<VanHostDetailPricing/>}/>
+          <Route path='photos' element={<VanHostDeailPhotos/>}/>
      </Route>
-  </Route>
+   </Route>
     <Route path='*' element={<NotFound/>}/>
   </Route>
   </>

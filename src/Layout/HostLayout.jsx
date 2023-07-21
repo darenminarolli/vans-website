@@ -22,6 +22,8 @@ const HostLayout = () => {
     </li>
 </ul>
     <Outlet/>
+ 
+
     </>
   )
 }

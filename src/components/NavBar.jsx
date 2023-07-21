@@ -1,5 +1,6 @@
 import { Link, NavLink} from 'react-router-dom';
 import '../../src/App.css'
+import {BiUserCircle} from 'react-icons/bi'
 function Navbar() {
 
   const activeStyles = {
@@ -23,6 +24,9 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/vans">Vans</NavLink>
+            </li>
+            <li className='nav-item'>
+               <NavLink className='nav-link' to='/login'><BiUserCircle/></NavLink>
             </li>
           </ul>
         </div>

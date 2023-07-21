@@ -25,13 +25,14 @@ const HostVans = () => {
                             
                         {
     vans.map(van => (
+       <>
         <Link
             to={`/host/vans/${van.id}`}
             key={van.id}
             className="host-van-link-wrapper wrapper"
             style={{color:'#000', textDecoration:'none'}}>
            
-            <div className="d-flex justify-content-start px-2 py-2 hostvanscontainer">
+            <div className="d-flex justify-content-start px-2 py-2  hostvanscontainer">
             <img src={van.imageUrl} alt={van.imageUrl} className='' style={{borderRadius:'5px', width:'250px'}} />
             <div className='px-3'>
                 <h2>{van.name}</h2>
@@ -40,6 +41,7 @@ const HostVans = () => {
             </div>
             
         </Link>
+        </>
     ))
     }
                         </section>

@@ -13,7 +13,7 @@ function Navbar() {
       <div className="container">
         <NavLink className="navbar-brand" to="/">#VANSLIFE</NavLink>
         
-        <div className="justify-content-end collapse navbar-collapse" id="navbarNav">
+        <div className="justify-content-end " id="navbarNav">
           <ul className="navbar-nav">
             <li className='nav-item'>
             <NavLink className='nav-link' to='/host'>Host</NavLink>

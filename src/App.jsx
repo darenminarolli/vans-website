@@ -22,6 +22,8 @@ import VanHostDeailPhotos from './pages/Host/VanHostDeailPhotos'
 import VanHostDetailPricing from './pages/Host/VanHostDetailPricing'
 import VanHostDetailDetails from './pages/Host/VanHostDetailDetails'
 import Login from './formValidation/Login'
+import SignIn from './formValidation/SignIn'
+import SignInSucces from './formValidation/SignInSucces'
 
 
 const router = createBrowserRouter(createRoutesFromElements(
@@ -31,8 +33,10 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path='about' element={<About/>}/>
     <Route path='vans' element={<Vans/>} loader={VansLoader}/>
     <Route path='vans/:id' element={<VanDetail/>}/>
-    <Route path='login' element={<Login/>}/>
-    <Route path='host' element={<HostLayout/>}>
+    <Route path='login' element={<Login/>}   />
+    <Route path='signin' element={<SignIn/>}/>
+    <Route path='signInSuccess' element={<SignInSucces/>}/>
+    <Route path='host' element={<HostLayout/>}  >
       <Route index element={<Dashboard/>} />
       <Route path='income' element={<Income/>}/>
       <Route path='review' element={<Reviews/>}/>
@@ -48,6 +52,7 @@ const router = createBrowserRouter(createRoutesFromElements(
   </>
 ))
 export default function App() {
+ 
   return (
     <RouterProvider router={router} />
   )

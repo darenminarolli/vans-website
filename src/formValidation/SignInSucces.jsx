@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import SuccessImg from '../assets/Screenshot (7).png'
 
 const SignInSucces = () => {
   return (
@@ -10,8 +11,9 @@ const SignInSucces = () => {
         <p>You have succesfully created an account,<br />
            go to login in now...
         </p>
+        <img src={SuccessImg} alt="" className='img-fluid' style={{width:'100%',}} />
         </hgroup>
-         <button type='button' style={{width:'70%'}} className='btn btn-primary'><NavLink className='nav-link' to='/login'>Go to login</NavLink></button>
+         <button type='button' style={{width:'100%'}} className='btn btn-primary'><NavLink className='nav-link' to='/login'>Go to login</NavLink></button>
     </section>
     </>
   )

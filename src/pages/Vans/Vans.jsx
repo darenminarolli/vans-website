@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import { Link, useSearchParams, useLoaderData} from 'react-router-dom';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import '../../server';
@@ -17,17 +16,7 @@ console.log(vans);
 
 const displayFilteredVans= typeFilter? vans.filter((van)=>van.type==typeFilter): vans;
 
-const [color,setColor]=useState(null)
 
-// const colorChanger=()=>{
-// if(vans.type=='luxury'){
-//   setColor('#161616')
-// }else if(vans.type=='simple'){
-//   setColor('#E17654')
-// }else{
-//   setColor('#115E59')
-// }
-// }
 function handleFilterChange(key, value) {
   setSearchParams(prevParams => {
       if (value === null) {

@@ -9,7 +9,7 @@ import Vans from './pages/Vans/Vans'
 import {loader as VansLoader} from './pages/Vans/Vans'
 import Home from './pages/Home'
 import './server'
-import VanDetail from './pages/Vans/VanDetail'
+import {VanDetail, loader as VansDetailLoader} from './pages/Vans/VanDetail'
 import NotFound from './pages/NotFound'
 import Layout from './Layout/Layout'
 import Income from './pages/Host/Income'
@@ -32,7 +32,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route index element={<Home/>}/>
     <Route path='about' element={<About/>}/>
     <Route path='vans' element={<Vans/>} loader={VansLoader}/>
-    <Route path='vans/:id' element={<VanDetail/>}/>
+    <Route path='vans/:id' element={<VanDetail/>} loader={VansDetailLoader}/>
     <Route path='login' element={<Login/>}   />
     <Route path='signin' element={<SignIn/>}/>
     <Route path='signInSuccess' element={<SignInSucces/>}/>

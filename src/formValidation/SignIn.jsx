@@ -4,17 +4,22 @@ import { useNavigate } from 'react-router-dom';
 const SignIn = () => {
   const navigator=useNavigate()
   const[isValid,isValidSet]=useState(true)
+  const[isPassValid,isPassValidSet]=useState(false)
+  const[isPassMatch,isPassMatchSet]=useState(false)
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
     password: '',
     confirmPassword: '',
   });
-console.log(formData)
+  const text={
+    passNotMatch: 'the 2 passwords do not match!!',
+    passNotCorrect: 'the password should be 8 char long',
+    alreadyUsed: 'this email has already an account'
+  }
   const handleChange = (e) => {
     const {name, value}=e.target;
     setFormData((prevData)=>({...prevData,[name]:value}))
-    
   };
 
   const handleSubmit = (e) => {
@@ -22,7 +27,12 @@ console.log(formData)
     localStorage.clear();
     localStorage.setItem('email', formData.email);
     localStorage.setItem('password', formData.password);
-    isValid? navigator('/signInSuccess'): '';
+    const regexPattern =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    regexPattern.test(formData.password)? isPassValidSet(true): isValidSet(false)
+    formData.password==formData.confirmPassword? isPassMatchSet(true): isValidSet(false)
+    isPassValid && isPassMatch? navigator('/signInSuccess'): '';
+    console.log(isValid)
+   
   }
  const styles={
   color: 'black',
@@ -43,7 +53,7 @@ console.log(formData)
             Sign In
           </div>
          {!isValid?  <div className='card-text'>
-            <button type='button' style={styles}>The 2 passwords do not match</button>
+            <button type='button' style={styles}>{!isPassValid? text.passNotCorrect: text.passNotMatch}</button>
           </div>: ''}
           <div className="card-body">
             <form method='post' onSubmit={handleSubmit} >

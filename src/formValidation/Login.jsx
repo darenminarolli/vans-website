@@ -13,9 +13,7 @@ const Login = () => {
         (navigator('/host'))
        }else{
         isValidSet(false)
-        console.log('error')
        }
-
     }
     function handleChange(e){
         const { name, value } = e.target

@@ -3,23 +3,22 @@ import { useParams,Link,useLocation,useLoaderData } from 'react-router-dom'
 import '../../App.css'
 import { getVans } from '../../api'
 
-export function loader(){
-  getVans()
+export function loader({params}){
+  return getVans(params.id)
 }
 
 const VanDetail = () => {
     const params = useParams()
     const location=useLocation()
     console.log(location)
-    const [van, setVan] = React.useState(null)
+    // const [van, setVan] = React.useState(null)
    
-    const detailVans=useLoaderData()
-
-    React.useEffect(() => {
-        fetch(`/api/vans/${params.id}`)
-            .then(res => res.json())
-            .then(data => setVan(data.vans))
-    }, [params.id])
+    const van=useLoaderData()
+    // React.useEffect(() => {
+    //     fetch(`/api/vans/${params.id}`)
+    //         .then(res => res.json())
+    //         .then(data => setVan(data.vans))
+    // }, [params.id])
   
    
   //  console.log(van)

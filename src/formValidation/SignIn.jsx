@@ -32,7 +32,6 @@ const SignIn = () => {
     formData.password==formData.confirmPassword? isPassMatchSet(true): isValidSet(false)
     isPassValid && isPassMatch? navigator('/signInSuccess'): '';
     console.log(isValid)
-   
   }
  const styles={
   color: 'black',

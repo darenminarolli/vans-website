@@ -1,27 +1,29 @@
 import React from 'react'
-import { useParams,Link, Outlet } from 'react-router-dom'
-import { useEffect, useState,  } from 'react'
+import { useParams,Link, Outlet, useLoaderData,  } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import {AiOutlineArrowLeft} from 'react-icons/ai'
 import './VanHostDetail.css'
+import { getHostVans } from '../../api'
+
+export function loader({params}){
+  return getHostVans(params.id)
+  
+}
 const VanHostDetail = () => {
   const { id } = useParams()
-  const [currentVan, setCurrentVan] = React.useState(null)
-const styles={
-
-}
-  React.useEffect(() => {
-      fetch(`/api/host/vans/${id}`)
-          .then(res => res.json())
-          .then(data => setCurrentVan(data.vans))
-  }, [])
-
+  // const [currentVan, setCurrentVan] = React.useState(null)
+  // React.useEffect(() => {
+  //     fetch(`/api/host/vans/${id}`)
+  //         .then(res => res.json())
+  //         .then(data => setCurrentVan(data.vans))
+  // }, [])
+const currentVan=useLoaderData()
+ console.log(currentVan)
   return (
     <>
     <section>
      <Link to='/host/vans' relative='path' className='nav-link'><h5><AiOutlineArrowLeft/> Back to all vans</h5></Link> 
     </section>
-    {
-      currentVan ? (
         <>
           <section>
             <div className="host-van-detail-layout-container">
@@ -53,10 +55,8 @@ const styles={
             </div>
         </section>
         </>
-      ) : <h1>Loading...</h1>
-    }
-    
     </>
+
   )
 }
 
